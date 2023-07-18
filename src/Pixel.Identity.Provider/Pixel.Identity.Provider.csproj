@@ -5,9 +5,6 @@
 		<UserSecretsId>Pixel.Identity.UI.Server-DBF95824-61B9-4155-ABD3-07F68D78DC36</UserSecretsId>
 		<RootNamespace>Pixel.Identity.Provider</RootNamespace>
 		<AssemblyName>Pixel.Identity.Provider</AssemblyName>
-		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-		<DockerfileContext>..\..</DockerfileContext>
-		<DockerComposeProjectPath>..\..\docker-compose.dcproj</DockerComposeProjectPath>
 		<BaseOutputPath>..\..\.builds\Identity</BaseOutputPath>
 	</PropertyGroup>
 
@@ -18,7 +15,6 @@
 		<PackageReference Include="McMaster.NETCore.Plugins.Mvc" Version="1.4.0" />
 		<PackageReference Include="Microsoft.AspNetCore.Authentication.Negotiate" Version="6.0.4" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="6.0.4" />
-		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.18.1" />
 		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.3" />	
 		<PackageReference Include="OpenIddict.AspNetCore" Version="4.2.0" />
 		<PackageReference Include="OpenIddict.Quartz" Version="4.2.0" />
@@ -32,6 +28,7 @@
 	<ItemGroup>
 		<ProjectReference Include="..\Pixel.Identity.Core\Pixel.Identity.Core.csproj" />
 		<ProjectReference Include="..\Pixel.Identity.Shared\Pixel.Identity.Shared.csproj" />
+		<ProjectReference Include="..\Pixel.Identity.Store.Sql.Shared\Pixel.Identity.Store.Sql.Shared.csproj" />
 		<ProjectReference Include="..\Pixel.Identity.UI.Client\Pixel.Identity.UI.Client.csproj" />
 	</ItemGroup>	
 	
