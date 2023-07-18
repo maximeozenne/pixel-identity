@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Pixel.Identity.Store.Sql.Shared": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:50662;http://localhost:50663"
+    }
+  }
+}
