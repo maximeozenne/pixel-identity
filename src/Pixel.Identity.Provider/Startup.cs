@@ -206,7 +206,8 @@ namespace Pixel.Identity.Provider
         private void ConfigureOpenIddict(IServiceCollection services, IDataStoreConfigurator configurator)
         {
             //Configure Identity will call services.AddIdentity which will AddAuthentication  
-            configurator.ConfigureIdentity(this.Configuration, services) 
+            configurator
+            .ConfigureIdentity(this.Configuration, services) 
             .AddSignInManager()
             .AddDefaultTokenProviders();
 
@@ -219,7 +220,8 @@ namespace Pixel.Identity.Provider
             .AddServer(options =>
             {
                 // Enable the authorization, logout, token and userinfo endpoints.
-                options.SetAuthorizationEndpointUris("connect/authorize")
+                options
+                .SetAuthorizationEndpointUris("connect/authorize")
                 .SetLogoutEndpointUris("connect/logout")
                 .SetTokenEndpointUris("connect/token")
                 .SetUserinfoEndpointUris("connect/userinfo")
@@ -232,14 +234,21 @@ namespace Pixel.Identity.Provider
 
                 // Disables the transport security requirement (HTTPS). Service is supposed
                 // to run behind a reverse-proxy with tls termination
-                options.UseAspNetCore().EnableTokenEndpointPassthrough().EnableUserinfoEndpointPassthrough()
-                       .EnableVerificationEndpointPassthrough().EnableStatusCodePagesIntegration()
-                       .DisableTransportSecurityRequirement();
+                options
+                .UseAspNetCore()
+                .EnableTokenEndpointPassthrough()
+                .EnableUserinfoEndpointPassthrough()
+                .EnableVerificationEndpointPassthrough()
+                .EnableStatusCodePagesIntegration();
 
                 options.DisableScopeValidation();
 
-                options.AllowAuthorizationCodeFlow().AllowDeviceCodeFlow()
-                    .AllowRefreshTokenFlow().AllowClientCredentialsFlow().AllowPasswordFlow();
+                options
+                .AllowAuthorizationCodeFlow()
+                .AllowDeviceCodeFlow()
+                .AllowRefreshTokenFlow()
+                .AllowClientCredentialsFlow()
+                .AllowPasswordFlow();
 
                 //https://documentation.openiddict.com/configuration/encryption-and-signing-credentials.html
                 //OpenIdDict uses two types of credentials to secure the token it issues.
@@ -271,7 +280,8 @@ namespace Pixel.Identity.Provider
                 }
 
                 // Register the ASP.NET Core host and configure the ASP.NET Core-specific options.
-                options.UseAspNetCore()
+                options
+                .UseAspNetCore()
                 .EnableAuthorizationEndpointPassthrough()
                 .EnableLogoutEndpointPassthrough()
                 .EnableTokenEndpointPassthrough()
